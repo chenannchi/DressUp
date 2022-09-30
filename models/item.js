@@ -9,9 +9,10 @@ const reviewScema = new Schema({
 })
 
 const itemSchema = new Schema({
+  name:String,
   brand:String,
   description:String,
-  imag:String,
+  image:String,
   link:String,
   reviews:[reviewScema],
 }, {
