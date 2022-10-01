@@ -6,9 +6,10 @@ function newItem(req,res){
 }
 
 function create(req,res){
+  req.body.owner = req.user.profile._id
   Item.create(req.body)
   .then(item => {
-    // console.log(item)
+    console.log(item)
     res.redirect("/items")
   })
   .catch(err => {
@@ -44,10 +45,22 @@ function show(req,res){
   })
 }
 
+function deleteItem(req,res){
+  Item.findByIdAndDelete(req.params.id)
+  .then(item =>{
+    res.redirect("/items")
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
+
 export{
   newItem as new,
   create,
   index,
   show,
+  deleteItem as delete,
 
 }

@@ -56,3 +56,15 @@
 a{
   color: black;
 }
+
+div{
+  /* border:2px black solid; */
+  margin: 2px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+button{
+  margin: 5px;
+  padding: 2px;
+}
