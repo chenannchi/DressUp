@@ -2,7 +2,7 @@ import mongoose, { Mongoose } from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const reviewScema = new Schema({
+const reviewSchema = new Schema({
   content:String,
   rating:Number,
   reviewer:{type:mongoose.Schema.Types.ObjectId, ref:"Profile"}
@@ -14,7 +14,8 @@ const itemSchema = new Schema({
   description:String,
   image:String,
   link:String,
-  reviews:[reviewScema],
+  reviews:[reviewSchema],
+  owner:{type:Schema.Types.ObjectId, ref:"Profile"}
 }, {
   timestamps: true
 })

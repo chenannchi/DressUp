@@ -20,6 +20,10 @@ body {
   margin: 0;
 }
 
+a{
+  color: #f6f6f6;
+}
+
 nav {
   background-color: #f6f6f6;
   color: #1a1a1a;
@@ -31,6 +35,8 @@ nav {
 
 nav a{
   margin: 10px;
+  color: #1a1a1a;
+  /* color: #f6f6f6; */
 }
 
 main {

@@ -1,0 +1,21 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="../stylesheets/items/show.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <div class="card">
+    <img src="<%= item.image %>" alt="<%= item.name %>'s image">
+    <div class="item-detail">
+      <div><%= item.name %></div>
+      <div>Brand:<%= item.brand %></div>
+      <div><%= item.description %></div>
+      <div><a href="<%= item.link %>">Learn more!</a></div>
+      <button class="btn">Save to my collection</button>
+    </div>
+  </div>
+  <div class="card">
+    Review!!!!!!!!!!
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
