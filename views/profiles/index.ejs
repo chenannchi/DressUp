@@ -1,0 +1,23 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/profiles/index.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <div class="card-container">
+    <% profiles.forEach(profile => { %>
+      <a class="text-decoration-none" href="/profiles/<%= profile._id %>">
+        <div class="card">
+          <img 
+            src="<%= profile.avatar %>" 
+            alt="<%= profile.name %>'s avatar"
+          >
+          <div class="card-body">
+            <h1 class="card-title"><%= profile.name %></h1>
+          </div>
+        </div>
+      </a>
+    <% }) %>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
