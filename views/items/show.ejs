@@ -1,13 +1,20 @@
 <%- include('../partials/html-head') %>
-  <link rel="stylesheet" href="../stylesheets/items/show.css">
+  <link rel="stylesheet" href="/stylesheets/items/show.css">
   <%- include('../partials/nav') %>
 
     <main>
       <div class="card">
         <img src="<%= item.image %>" alt="<%= item.name %>'s image">
         <div class="item-detail">
-          <div>
-            <%= item.name %>
+          <div id="title-edit">
+            <h2>
+              <%= item.name %>
+            </h2>
+            <% if (user) { %>
+              <a href="/items/<%= item._id %>/edit">
+                <button>Edit Item</button>
+              </a>
+            <% } %>
           </div>
           <div>Brand:<%= item.brand %>
           </div>
@@ -15,8 +22,8 @@
             <%= item.description %>
           </div>
           <div><a href="<%= item.link %>">Learn more!</a></div>
-          <button class="btn">Save to my collection</button>
-          <% if (user.profile._id.equals(item.owner._id)) { %>
+          <% if (user?.profile._id.equals(item.owner._id)) { %>
+            <button class="btn">Save to my collection</button>
             <form action="/items/<%= item._id %>?_method=DELETE" method="POST">
               <button type="submit">Delete item</button>
             </form>
@@ -24,23 +31,26 @@
         </div>
       </div>
 
+      <% if (user) { %>
+        <div class="card">
+          <h2>Write Reviews:</h2>
+          <form id="add-review-form" action="/items/<%= item._id %>/reviews" method="POST">
+            <label for="content-textarea">Review:</label>
+            <textarea name="content" id="content-textarea"></textarea>
+            <label for="rating-select">Rating:</label>
+            <select name="rating" id="rating-select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5" selected>5</option>
+            </select>
+            <button type="submit">Add Review</button>
+          </form>
+        </div>
+      <% } %> 
+      
       <div class="card">
-        <h2>Write Reviews:</h2>
-        <form id="add-review-form" action="/items/<%= item._id %>/reviews" method="POST">
-          <label for="content-textarea">Review:</label>
-          <textarea name="content" id="content-textarea"></textarea>
-          <label for="rating-select">Rating:</label>
-          <select name="rating" id="rating-select">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5" selected>5</option>
-          </select>
-          <button type="submit">Add Review</button>
-        </form>
-      </div>
-      <div class=""card>
         <h2>Reviews:</h2>
         <% if (item.reviews.length) { %>
           <table>

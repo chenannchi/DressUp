@@ -28,7 +28,7 @@
   padding: 10px;
   flex-direction: row;
   align-items: center;
-  margin: 20px;
+  margin: 5px;
   justify-content: space-evenly;
 }
 
@@ -67,4 +67,11 @@ div{
 button{
   margin: 5px;
   padding: 2px;
+}
+
+#title-edit{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }

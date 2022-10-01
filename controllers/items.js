@@ -77,6 +77,33 @@ function createReview(req,res){
   })
 }
 
+function edit(req,res){
+  Item.findById(req.params.id)
+  .then(item => {
+    res.render("items/edit",{
+      item,
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
+
+function update(req,res){
+  for (let key in req.body) {
+    if(req.body[key] === "") delete req.body[key]
+  }
+  Item.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(item => {
+    res.redirect(`/items/${item._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
+
 export{
   newItem as new,
   create,
@@ -84,4 +111,6 @@ export{
   show,
   deleteItem as delete,
   createReview,
+  edit,
+  update
 }
