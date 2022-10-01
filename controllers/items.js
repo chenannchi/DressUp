@@ -56,11 +56,32 @@ function deleteItem(req,res){
   })
 }
 
+function createReview(req,res){
+  req.body.reviewer = req.user.profile._id
+  Item.findById(req.params.id)
+  .then(item => {
+    item.reviews.push(req.body)
+    item.save()
+    .then(() => {
+      console.log(item)
+      res.redirect(`/items/${item._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export{
   newItem as new,
   create,
   index,
   show,
   deleteItem as delete,
-
+  createReview,
 }
