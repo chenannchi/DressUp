@@ -1,16 +1,21 @@
 <%- include('./partials/html-head') %>
-<%- include('./partials/nav') %>
+  <link rel="stylesheet" href="/stylesheets/index.css">
+  <%- include('./partials/nav') %>
 
-<main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
-  <% } %>
-</main>
+    <main>
+      <div class="card">
+        <section>
+          <% if (user) { %>
+            <h1>
+              <%= user.profile.name %>,<br>welcome to DressUp!
+            </h1>
+            <% }else{ %>
+              <h1>Welcome to DressUp!</h1>
+              <% } %>
+                <p>You can add fashion items by simply entering some info about your fashion item, collect every fashion
+                  item you are interested in, and finally collect fashion items that are listed.</p>
+        </section>
+      </div>
+    </main>
 
-<%- include('./partials/footer') %>
+    <%- include('./partials/footer') %>

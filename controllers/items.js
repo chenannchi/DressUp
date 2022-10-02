@@ -109,11 +109,13 @@ function addToCollection(req,res){
   Profile.findById(req.params.profileId)
   .then(profile => {
     // console.log(req.body)
-    profile.collections.push(req.params.itemId)
+    if (!profile.collections.includes(req.params.itemId)){
+      profile.collections.push(req.params.itemId)
+    }
     profile.save()
     .then(()=>{
       // console.log(profile.collections)
-      res.redirect(`/items`)
+      res.redirect(`/items/mycollections`)
     })
     .catch(err => {
       console.log(err)

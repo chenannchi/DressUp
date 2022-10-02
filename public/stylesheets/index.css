@@ -1,0 +1,46 @@
+html{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+}
+
+nav{
+  width: 100vw;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  background-color: #F0E9E2;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.card {
+  display: flex;
+  width: 50vw;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: black;
+  padding: 20px;
+  text-align: center;
+}
+
+p{
+  font-size: 18px;
+}
