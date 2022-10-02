@@ -5,25 +5,29 @@
 
     <body>
       <nav>
+        <a href="/" %>
+          >
+          Home
+        </a>
         <% if (user) { %>
           <a href="/items/new" %>
             >
-            ADD ITEM
+            Add Fashion Item
           </a>
         <% } %>
         <a href="/items" %>
           >
-          ALL ITEMS
+          All Fashion Items
         </a>
         
         <% if (user) { %>
-          <a href="/mycloset" %>
+          <a href="/items/mycollections" %>
             >
-            MY CLOSET
+            My Collections
           </a>
           <a href="/profiles" %>
             >
-            ALL Collectors
+            All Collectors
           </a>
           <a href="/profiles/<%= user.profile._id %>"
             >

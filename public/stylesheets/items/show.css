@@ -75,3 +75,8 @@ button{
   align-items: center;
   justify-content: space-between;
 }
+
+table{
+  width: 50vw;
+  text-align: center;
+}

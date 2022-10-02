@@ -104,6 +104,38 @@ function update(req,res){
   })
 }
 
+function addToCollection(req,res){
+  // console.log("My collections!!")
+  Profile.findById(req.params.profileId)
+  .then(profile => {
+    // console.log(req.body)
+    profile.collections.push(req.params.itemId)
+    profile.save()
+    .then(()=>{
+      // console.log(profile.collections)
+      res.redirect(`/items`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect("/items")
+    })
+  })
+}
+
+function indexCollection(req,res){
+  Profile.findById(req.user.profile.id)
+  .populate("collections")
+  .then(profile => {
+    res.render("items/mycollections",{
+      profile,
+    })    
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/items")
+  })
+}
+
 export{
   newItem as new,
   create,
@@ -112,5 +144,7 @@ export{
   deleteItem as delete,
   createReview,
   edit,
-  update
+  update,
+  addToCollection,
+  indexCollection
 }
