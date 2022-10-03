@@ -1,7 +1,15 @@
-.main {
+html {
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+}
+
+/* main {
   display: flex;
   justify-content: center;
-}
+} */
 
 .card-container {
   display: flex;
@@ -18,24 +26,24 @@
 }
 
 .card {
+  margin-top: 30px;
   display: flex;
-  width: 80vw;
-  height: auto;
+  width: 50vw;
+  height: 60%;
   background-color: white;
   border: 2px solid black;
   border-radius: 10px;
   color: black;
-  padding: 10px;
   flex-direction: row;
   align-items: center;
-  margin: 5px;
   justify-content: space-evenly;
+  padding: 0;
 }
 
 .card > img {
   border-radius: 10px;
-  height: 500px;
-  margin: 5px;
+  width: 25%;
+  margin: 10px;
 }
 
 .card-body {
@@ -50,7 +58,8 @@
 }
 
 .item-detail{
-  margin: 20px;
+  margin: 5px;
+  width: 40%;
 }
 
 a{
@@ -58,7 +67,6 @@ a{
 }
 
 div{
-  /* border:2px black solid; */
   margin: 2px;
   border-radius: 5px;
   padding: 5px;

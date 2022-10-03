@@ -1,15 +1,14 @@
 <%- include('../partials/html-head') %>
-<%- include('../partials/nav') %>
+  <link rel="stylesheet" href="/stylesheets/profiles/show.css">
+  <%- include('../partials/nav') %>
 
-<main>
-  <div>
-    <img 
-      class="profile-avatar"
-      src="<%= profile.avatar %>" 
-      alt="<%= profile.name %>'s avatar"
-    >
-  </div>
-  <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
-</main>
+    <main>
+      <div class="card-container">
+        <div class="card">
+          <img class="profile-avatar" src="<%= profile.avatar %>" alt="<%= profile.name %>'s avatar">
+          <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+        </div>
+      </div>
+    </main>
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>

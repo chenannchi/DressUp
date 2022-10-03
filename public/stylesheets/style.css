@@ -75,3 +75,10 @@ body{
   padding: 20px;
   text-align: center;
 }
+
+button{
+  font-family: 'EB Garamond', serif;
+  background-color: #EBCCAD;
+  border-radius: 10px;
+  padding: 5px;
+}
