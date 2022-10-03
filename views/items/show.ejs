@@ -22,10 +22,12 @@
           </div>
           <div><a href="<%= item.link %>">Learn more!</a></div>
           <div id="save-delete">
-            <% if (user?.profile._id.equals(item.owner._id)) { %>
+            <% if (user) { %>
               <form action="/items/<%= item._id %>/mycollections/<%= user.profile._id %>" method="POST">
                 <button class="btn">Save to my collection</button>
-              </form>
+              </form>              
+            <% } %>
+            <% if (user?.profile._id.equals(item.owner._id)) { %>
               <form action="/items/<%= item._id %>?_method=DELETE" method="POST">
                 <button type="submit">Delete item</button>
               </form>
