@@ -51,8 +51,7 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url("https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZmFzaGlvbnxlbnwwfDB8MHx8&auto=format&fit=crop&w=700&q=60");
-  background-size: cover;
+  
   height: 100%;
 }
 body{
