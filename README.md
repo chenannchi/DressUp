@@ -8,3 +8,7 @@
 ## **Technologies Used**: List of technologies used.
 
 ## **Next Steps**: The future enhancements you plan to make to your app (icebox items).
+
+## **Credits**
+- Background image from [Unsplash](https://unsplash.com/)
+-  

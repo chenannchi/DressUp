@@ -31,7 +31,8 @@
           </a>
           <a href="/profiles/<%= user.profile._id %>"
             >
-            My Profile
+            <!-- My Profile -->
+            <%= user.profile.name %> 
           </a>
           <a href="/auth/logout" class="right">
             <button type="submit">Logout</button>

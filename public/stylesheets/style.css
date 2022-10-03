@@ -1,5 +1,9 @@
 html {
   box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
 }
 
 /* The Universal Selector */
@@ -12,13 +16,13 @@ html {
 }
 
 body {
-  /* background-color: #1a1a1a; */
-  /* color: #f6f6f6; */
-  color:black;
+  background-color:#EBCCAD;
+  color:white;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: 'EB Garamond', serif, system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   margin: 0;
+  width: 100%;
 }
 
 a{
@@ -26,13 +30,14 @@ a{
 }
 
 nav {
-  background-color: #f6f6f6;
+  background-color: #F5E5D6;
   color: #1a1a1a;
   display: flex;
   align-items: center;
   padding: 10px;
   min-height: 60px;
   font-size: 20px;
+  width: 100%;
 }
 
 nav a{
@@ -46,8 +51,27 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-image: url("https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZmFzaGlvbnxlbnwwfDB8MHx8&auto=format&fit=crop&w=700&q=60");
+  background-size: cover;
+  height: 100%;
 }
-
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
 .right {
   margin-left: auto;
+}
+
+.card {
+  display: flex;
+  width: 50vw;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: black;
+  padding: 20px;
+  text-align: center;
 }

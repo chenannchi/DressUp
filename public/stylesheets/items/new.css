@@ -18,6 +18,16 @@ form > button {
   font-size: 22px;
 }
 
-/* a{
-  color: aliceblue;
-} */
+h1{
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.card {
+  flex-direction: column;
+  opacity: .9;
+}
+
+button{
+  font-family: 'EB Garamond', serif;
+}

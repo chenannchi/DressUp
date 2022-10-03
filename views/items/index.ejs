@@ -1,22 +1,24 @@
 <%- include('../partials/html-head') %>
   <link rel="stylesheet" href="/stylesheets/items/index.css">
   <%- include('../partials/nav') %>
+<main>
 
-    <h1>The Fashion Collections:</h1>
+  <h1>The Fashion Collections:</h1>
 
-    <div class="card-container">
-      <% items.forEach(item=> { %>
-        <a class="text-decoration-none" href="/items/<%= item._id %>">
-          <div class="card">
-            <img src="<%= item.image %>" alt="<%= item.name %>'s image">
-            <div class="card-body">
-              <h1 class="card-title">
-                <%= item.name %>
-              </h1>
-            </div>
+  <div class="card-container">
+    <% items.forEach(item=> { %>
+      <a class="text-decoration-none" href="/items/<%= item._id %>">
+        <div class="card">
+          <img src="<%= item.image %>" alt="<%= item.name %>'s image">
+          <div class="card-body">
+            <h1 class="card-title">
+              <%= item.name %>
+            </h1>
           </div>
-        </a>
-        <% }) %>
-    </div>
+        </div>
+      </a>
+      <% }) %>
+  </div>
+</main>
 
     <%- include('../partials/footer') %>

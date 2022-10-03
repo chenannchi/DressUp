@@ -1,16 +1,15 @@
 <%- include('./partials/html-head') %>
   <link rel="stylesheet" href="/stylesheets/index.css">
   <%- include('./partials/nav') %>
-
     <main>
       <div class="card">
         <section>
           <% if (user) { %>
-            <h1>
-              <%= user.profile.name %>,<br>welcome to DressUp!
-            </h1>
+            <div class="welcome">
+              <%= user.profile.name %>,<br>welcome to <b>DressUp</b>!
+            </div>
             <% }else{ %>
-              <h1>Welcome to DressUp!</h1>
+              <div class="welcome">Welcome to <b>DressUp</b>!</div>
               <% } %>
                 <p>You can add fashion items by simply entering some info about your fashion item, collect every fashion
                   item you are interested in, and finally collect fashion items that are listed.</p>
