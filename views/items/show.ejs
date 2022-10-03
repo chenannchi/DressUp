@@ -13,7 +13,7 @@
               <a href="/items/<%= item._id %>/edit">
                 <button>Edit Item</button>
               </a>
-            <% } %>
+              <% } %>
           </div>
           <div>Brand:<%= item.brand %>
           </div>
@@ -21,14 +21,16 @@
             <%= item.description %>
           </div>
           <div><a href="<%= item.link %>">Learn more!</a></div>
-          <% if (user?.profile._id.equals(item.owner._id)) { %>
-            <form action="/items/<%= item._id %>/mycollections/<%= user.profile._id %>" method="POST">
-              <button class="btn">Save to my collection</button>
-            </form>
-            <form action="/items/<%= item._id %>?_method=DELETE" method="POST">
-              <button type="submit">Delete item</button>
-            </form>
-            <% } %>
+          <div id="save-delete">
+            <% if (user?.profile._id.equals(item.owner._id)) { %>
+              <form action="/items/<%= item._id %>/mycollections/<%= user.profile._id %>" method="POST">
+                <button class="btn">Save to my collection</button>
+              </form>
+              <form action="/items/<%= item._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete item</button>
+              </form>
+              <% } %>
+          </div>
         </div>
       </div>
 
@@ -49,36 +51,39 @@
             <button type="submit">Add Review</button>
           </form>
         </div>
-      <% } %> 
-      
-      <div class="card">
-        <h2>Reviews:</h2>
-        <% if (item.reviews.length) { %>
-          <table>
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Review</th>
-                <th>Rating</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% item.reviews.forEach(function(review) { %>
-                <tr>
-                  <td><%= review.createdAt.toLocaleDateString() %></td>
-                  <td><%= review.content %></td>
-                  <td><%= review.rating %></td>
-                </tr>
-              <% }) %>
-            </tbody>
-          </table>
-        <% } else { %>
-          <h3>No Reviews Yet</h3>
         <% } %>
-      </div>
-      <a href="/items">
-        <button></button>
-      </a>
+
+          <div class="card">
+            <h2>Reviews:</h2>
+            <% if (item.reviews.length) { %>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Review</th>
+                    <th>Rating</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% item.reviews.forEach(function(review) { %>
+                    <tr>
+                      <td>
+                        <%= review.createdAt.toLocaleDateString() %>
+                      </td>
+                      <td>
+                        <%= review.content %>
+                      </td>
+                      <td>
+                        <%= review.rating %>
+                      </td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+              </table>
+              <% } else { %>
+                <h3>No Reviews Yet</h3>
+                <% } %>
+          </div>
     </main>
 
     <%- include('../partials/footer') %>

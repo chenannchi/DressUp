@@ -26,8 +26,5 @@ h1{
 .card {
   flex-direction: column;
   opacity: .9;
-}
-
-button{
-  font-family: 'EB Garamond', serif;
+  animation: zoomIn 2s;
 }

@@ -79,6 +79,11 @@ body{
 button{
   font-family: 'EB Garamond', serif;
   background-color: #EBCCAD;
+  border-color: #BC9F6A;
   border-radius: 10px;
-  padding: 5px;
+  font-size: 15px;
+}
+
+button:hover{
+  background-color: #FFEECA;
 }

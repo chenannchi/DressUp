@@ -48,6 +48,7 @@ body{
 
 .card{
   opacity: .9;
+  animation: fadeIn 1s;
 }
 
 p{
