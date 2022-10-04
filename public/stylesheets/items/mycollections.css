@@ -1,20 +1,14 @@
 main {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* background-color: red; */
-  background-image: url("https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZmFzaGlvbnxlbnwwfDB8MHx8&auto=format&fit=crop&w=700&q=60");
+  background-image: url("https://images.unsplash.com/photo-1633505899118-4ca6bd143043?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80");
   background-size:cover;
   background-attachment: fixed;
 }
 
+
 .card-container {
   display: flex;
   justify-content: center;
-  /* flex-direction: column; */
   flex-wrap: wrap;
-  /* gap: 20px; */
-  /* margin: 20px; */
-  /* max-width: 1600px; */
   margin: 5px;
 }
 
@@ -26,11 +20,8 @@ main {
   display: flex;
   width: 200px;
   height: 400px;
-  /* background-color: rgba(255,255,255,.7); */
   background-color: rgb(150, 126, 118,.7);
-  /* border: 2px solid black; */
   border-radius: 10px;
-  /* color: black; */
   padding: 10px;
   flex-direction: column;
   align-items: center;
@@ -64,4 +55,5 @@ main {
   padding: 0 40px;
   margin: 20px;
   border-style: dotted;
+  color: black;
 }
