@@ -14,33 +14,32 @@
             >
             Add Fashion Item
           </a>
-        <% } %>
-        <a href="/items" %>
-          >
-          All Fashion Items
-        </a>
-        
-        <% if (user) { %>
-          <a href="/items/mycollections" %>
-            >
-            My Collections
-          </a>
-          <a href="/profiles" %>
-            >
-            All Users
-          </a>
-          <a href="/profiles/<%= user.profile._id %>"
-            >
-            <!-- My Profile -->
-            <%= user.profile.name %> 
-          </a>
-          <a href="/auth/logout" class="right">
-            <button type="submit">Logout</button>
-          </a>
-          <% } else { %>
-            <div id="g_id_onload" data-client_id="<%= googleClientID %>" data-login_uri="/auth/google"
-              data-auto_prompt="false"></div>
-            <div class="g_id_signin right" data-type="standard" data-size="large" data-theme="outline"
-              data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
+          <% } %>
+            <a href="/items" %>
+              >
+              All Fashion Items
+            </a>
+
+            <% if (user) { %>
+              <a href="/items/mycollections" %>
+                >
+                My Collections
+              </a>
+              <a href="/profiles" %>
+                >
+                All Users
+              </a>
+              <a href="/profiles/<%= user.profile._id %>">
+                <!-- My Profile -->
+                <%= user.profile.name %>
+              </a>
+              <a href="/auth/logout" class="right">
+                <button type="submit">Logout</button>
+              </a>
+            <% } else { %>
+              <div id="g_id_onload" data-client_id="<%= googleClientID %>" data-login_uri="/auth/google"
+                data-auto_prompt="false"></div>
+              <div class="g_id_signin right" data-type="standard" data-size="large" data-theme="outline"
+                data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
             <% } %>
       </nav>

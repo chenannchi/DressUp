@@ -8,9 +8,9 @@
   justify-content: center;
   /* flex-direction: column; */
   flex-wrap: wrap;
-  gap: 20px;
-  margin: 20px;
-  max-width: 1600px;
+  /* gap: 20px; */
+  /* margin: 20px; */
+  /* max-width: 1600px; */
 }
 
 .text-decoration-none {
@@ -20,33 +20,43 @@
 .card {
   display: flex;
   width: 200px;
-  height: auto;
-  background-color: white;
+  height: 400px;
+  /* background-color: rgba(255,255,255,.7); */
+  background-color: rgb(150, 126, 118,.7);
   border: 2px solid black;
   border-radius: 10px;
   color: black;
   padding: 10px;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  margin: 5px;
 }
 
 .card > img {
   border-radius: 10px;
-  width: 75%;
+  width: 95%;
+  /* height: 40%; */
   margin: 5px;
+  /* border:2px grey solid; */
 }
 
 .card-body {
+  width: 95%;
+  height:30%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .card-title {
-  font-size: 24px;
-  margin: 10px;
+  font-size: 20px;
+  /* margin: 10px; */
 }
 
-/* a{
-  color: aliceblue;
-} */
+#collections-index-title{
+  background-color: rgba(150, 126, 118, .6);
+  border-radius: 50%;
+  padding: 0 40px;
+  margin: 20px;
+}
