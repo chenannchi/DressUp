@@ -22,7 +22,7 @@ The reason why I build this application is because it's getting colder recently.
 ## **Screenshots**
 
  - Home Page in Large Screen<br/>
-    - <img src="../Dress-Up/assets/homepage-in-larger-screen.png" alt="drawing" width="600"/>
+    - <img src="./public/homepage-in-larger-screen.png" alt="drawing" width="600"/>
 
   <br/>
 
