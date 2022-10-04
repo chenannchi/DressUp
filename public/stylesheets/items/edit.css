@@ -1,7 +1,11 @@
-/* main{
-  display: flex;
-  justify-content: flex-start;
-} */
+html{
+  height: 100%;
+}
+
+main{
+  background-image: url("https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZmFzaGlvbnxlbnwwfDB8MHx8&auto=format&fit=crop&w=700&q=60");
+  background-size: cover;
+}
 
 form {
   display: grid;
@@ -21,4 +25,15 @@ form > button {
   width: 160px;
   margin-left: auto;
   font-size: 22px;
+}
+
+h1{
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.card {
+  flex-direction: column;
+  background-color: rgba(255,255,255,.9);
+  animation: zoomIn 2s;
 }
