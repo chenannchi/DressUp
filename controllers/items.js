@@ -56,9 +56,24 @@ function index(req, res) {
     })
 }
 
+// function show(req, res) {
+//   Item.findById(req.params.id)
+//     .then(item => {
+//       console.log(item)
+//       res.render("items/show", {
+//         item,
+//       })
+//     })
+//     .catch(err => {
+//       console.log(err)
+//       res.redirect("/")
+//     })
+// }
+
 function show(req, res) {
   Item.findById(req.params.id)
     .then(item => {
+      // console.log(item)
       res.render("items/show", {
         item,
       })

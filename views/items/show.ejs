@@ -62,6 +62,7 @@
                 <thead>
                   <tr>
                     <th>Date</th>
+                    <th>Reviewer</th>
                     <th>Review</th>
                     <th>Rating</th>
                   </tr>
@@ -71,6 +72,9 @@
                     <tr>
                       <td>
                         <%= review.createdAt.toLocaleDateString() %>
+                      </td>
+                      <td>
+                        <%= review.reviewer %>
                       </td>
                       <td>
                         <%= review.content %>
