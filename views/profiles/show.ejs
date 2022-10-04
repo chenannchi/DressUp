@@ -7,18 +7,24 @@
         <div class="card">
           <img class="profile-avatar" src="<%= profile.avatar %>" alt="<%= profile.name %>'s avatar">
           <h1><%= profile.name %></h1>
-          <div>Email: <%= theUser[0].email %> </div>
-          <div><% if(user.profile._id.equals(profile._id)){ %></div>
-              You have 
-            <% }else{ %>
-              <%= profile.name %> has  
-            <% } %> collected
-            <%= profile.collections.length %> fashion 
-            <% if (profile.collections.length < 2) { %>
-              item!
-            <% }else{ %>
-            items!
-            <% } %> 
+          <div class="info-section">
+            <h3>Email:</h3>
+            <div><%= theUser[0].email %> </div>
+          </div>
+          <div class="info-section">
+            <h3>Numer of collections:</h3>
+            <div><% if(user.profile._id.equals(profile._id)){ %></div>
+                You have 
+              <% }else{ %>
+                <%= profile.name %> has  
+              <% } %> collected
+              <%= profile.collections.length %> fashion 
+              <% if (profile.collections.length < 2) { %>
+                item!
+              <% }else{ %>
+              items!
+              <% } %> 
+          </div>
         </div>
       </div>
     </main>

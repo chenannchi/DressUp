@@ -3,7 +3,7 @@ html{
 }
 
 main{
-  background-image: url("https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZmFzaGlvbnxlbnwwfDB8MHx8&auto=format&fit=crop&w=700&q=60");
+  background-image: url("https://images.unsplash.com/photo-1525562723836-dca67a71d5f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fGNsb3RoaW5nJTIwc3RvcmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
   background-size: cover;
 }
 
@@ -18,8 +18,11 @@ main{
   flex-direction: column;
   justify-content: center;
   background-color: rgba(255,255,255,.9);
-  width: 30vw;
+  width: 50vw;
+  min-width: 400px;
+  max-width: 500px;
   animation: pulse 2s;
+  border: none;
 }
 
 .card > img {
@@ -36,4 +39,17 @@ main{
 .card-title {
   font-size: 24px;
   margin: 0 10px;
+}
+
+div{
+  font-size: 20px;
+  padding: 5px;
+}
+
+.info-section{
+  margin: 10px;
+}
+
+h3{
+  margin: 0;
 }
