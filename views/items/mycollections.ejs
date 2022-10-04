@@ -1,8 +1,12 @@
 <%- include('../partials/html-head') %>
-  <link rel="stylesheet" href="/stylesheets/items/index.css">
+  <link rel="stylesheet" href="/stylesheets/items/mycollections.css">
   <%- include('../partials/nav') %>
 <main>
-  <h1>My Fashion Collections:</h1>
+  
+  <div id="collections-index-title">
+    <h1>My Fashion Collections:</h1>
+  </div>
+
   <div class="card-container">
     <% profile.collections.forEach(item=> { %>
       <a class="text-decoration-none" href="/items/<%= item._id %>">
