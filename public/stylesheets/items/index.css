@@ -3,6 +3,9 @@ main {
   background-image: url("https://images.unsplash.com/photo-1610359826985-f2130cc5f5a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d2FsbHxlbnwwfDB8MHx3aGl0ZXw%3D&auto=format&fit=crop&w=500&q=60");
   background-size:cover;
   background-attachment: fixed;
+  display: flex;
+  justify-content: flex-start;
+  min-height: 100vh;
 }
 
 .card-container {
@@ -34,6 +37,7 @@ main {
   align-items: center;
   justify-content: space-around;
   margin: 10px;
+  animation: fadeInUp 2s;
 }
 
 .card > img {
@@ -63,4 +67,7 @@ main {
   margin: 20px;
   border-style: dotted;
   color: black;
+  /* animation: fadeIn 3s ; */
+  animation: fadeIn 3s;
+  animation-delay: 20ms;
 }
