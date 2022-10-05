@@ -52,6 +52,7 @@ function show(req, res) {
   })
   .then(item => {
     // console.log(item.reviews)
+    // console.log(req.user.profile)
     res.render("items/show", {
       item,
     })

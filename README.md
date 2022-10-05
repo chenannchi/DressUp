@@ -60,6 +60,7 @@ The reason why I build this application is because it's getting colder recently.
 - Express
 - EJS
 - Node.js
+- Animate.css
 
 ## **Next Steps**
 -  Add a logo.
@@ -72,3 +73,4 @@ The reason why I build this application is because it's getting colder recently.
 ## **Credits**
 - Background images from [Unsplash](https://unsplash.com/)
 - Favicon from [icons8](https://icons8.com/)
+- Animations from [Animate.css](https://animate.style/)
