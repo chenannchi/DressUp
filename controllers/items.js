@@ -64,34 +64,52 @@ function index(req, res) {
 
 function show(req, res) {
   let inCollections = 0
-  Profile.findById(req.user.profile._id)
+  if(req.user){
+    Profile.findById(req.user?.profile._id)
     .populate("collections")
-      .then(profile => {
-        Item.findById(req.params.id)
-        .populate({
-          path:"reviews",
-          populate:{path:"reviewer"}
-        })
-        .then(item => {
-          for (let i = 0; i < profile.collections.length; i++){
-            if (profile.collections[i].equals(item)){
-              inCollections = 1
-              break
-            }
+    .then(profile => {
+      Item.findById(req.params.id)
+      .populate({
+        path:"reviews",
+        populate:{path:"reviewer"}
+      })
+      .then(item => {
+        for (let i = 0; i < profile.collections.length; i++){
+          if (profile.collections[i].equals(item)){
+            inCollections = 1
+            break
           }
-
-          // console.log("final incollections",inCollections)          
-          
-          res.render("items/show", {
-            item,
-            inCollections,
-          })
-        })
-        .catch(err => {
-          console.log(err)
-          res.redirect("/")
+        }
+        res.render("items/show", {
+          item,
+          inCollections,
         })
       })
+      .catch(err => {
+        console.log(err)
+        res.redirect("/")
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect("/")
+    })
+  }else{
+    Item.findById(req.params.id)
+    .populate({
+      path:"reviews",
+      populate:{path:"reviewer"}
+    })
+    .then(item => {
+      res.render("items/show", {
+        item,
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect("/")
+    })
+  }
 }
 
 
@@ -166,7 +184,8 @@ function addToCollections(req, res) {
       profile.save()
         .then(() => {
           // console.log(profile.collections)
-          res.redirect(`/items/mycollections`)
+          // res.redirect(`/items/mycollections`)
+          res.redirect(`/items/${req.params.itemId}`)
         })
         .catch(err => {
           console.log(err)
@@ -190,7 +209,7 @@ function deleteFromCollections(req, res) {
       profile.save()
         .then(() => {
           // console.log(profile.collections)
-          res.redirect(`/items/mycollections`)
+          res.redirect(`/items/${req.params.itemId}`)
         })
         .catch(err => {
           console.log(err)

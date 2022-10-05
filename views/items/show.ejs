@@ -12,9 +12,16 @@
             <div>Brand:<%= item.brand %>
             </div>
             <div>
+              <% let total = 0 %> 
+              <% item.reviews.forEach(function(review) { %>
+                <% total +=review.rating %>
+              <% }) %> 
+              <%= total / (item.reviews.length) %> ⭐ 
+            </div>
+            <div>
               <%= item.description %>
             </div>
-            <div><a href="<%= item.link %>">Learn more!</a></div>
+            <div><a href="<%= item.link %>" target="_blank">Learn more!</a></div>
             <div id="save-delete">
               <% if (user) { %>
                 <% if (!inCollections) { %>
