@@ -2,94 +2,91 @@
   <link rel="stylesheet" href="/stylesheets/items/show.css">
   <%- include('../partials/nav') %>
     <main>
-      <div class="card">
-        <img src="<%= item.image %>" alt="<%= item.name %>'s image">
-        <div class="item-detail">
-          <div id="title-edit">
+      <div id="item-info">
+        <div class="card">
+          <img src="<%= item.image %>" alt="<%= item.name %>'s image">
+          <div class="item-detail">
             <h2>
               <%= item.name %>
             </h2>
-            <% if (user) { %>
-              <a href="/items/<%= item._id %>/edit">
-                <button>Edit Item</button>
-              </a>
+            <div>Brand:<%= item.brand %>
+            </div>
+            <div>
+              <%= item.description %>
+            </div>
+            <div><a href="<%= item.link %>">Learn more!</a></div>
+            <div id="save-delete">
+              <% if (user) { %>
+                <form action="/items/<%= item._id %>/mycollections/<%= user.profile._id %>" method="POST">
+                  <button class="btn">Save to my collection</button>
+                </form>
               <% } %>
-          </div>
-          <div>Brand:<%= item.brand %>
-          </div>
-          <div>
-            <%= item.description %>
-          </div>
-          <div><a href="<%= item.link %>">Learn more!</a></div>
-          <div id="save-delete">
-            <% if (user) { %>
-              <form action="/items/<%= item._id %>/mycollections/<%= user.profile._id %>" method="POST">
-                <button class="btn">Save to my collection</button>
-              </form>              
-            <% } %>
-            <% if (user?.profile._id.equals(item.owner._id)) { %>
-              <form action="/items/<%= item._id %>?_method=DELETE" method="POST">
-                <button type="submit">Delete item</button>
-              </form>
+              <% if (user?.profile._id.equals(item.owner._id)) { %>
+                <form action="/items/<%= item._id %>?_method=DELETE" method="POST">
+                  <button type="submit">Delete item</button>
+                </form>
+                <a href="/items/<%= item._id %>/edit">
+                  <button>Edit Item</button>
+                </a>
               <% } %>
+            </div>
           </div>
         </div>
-      </div>
 
-      <% if (user) { %>
-        <div class="card" id="review-form">
-          <h2>Write Reviews:</h2>
-          <form id="add-review-form" action="/items/<%= item._id %>/reviews" method="POST">
-            <label for="content-textarea"></label>
-            <textarea name="content" id="content-textarea"></textarea>
-            <label for="rating-select">Rating:</label>
-            <select name="rating" id="rating-select">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5" selected>5</option>
-            </select>
-            <button type="submit">Add Review</button>
-          </form>
-        </div>
-        <% } %>
+        <% if (user) { %>
+          <div class="card" id="review-form">
+            <form id="add-review-form" action="/items/<%= item._id %>/reviews" method="POST">
+              <label for="content-textarea">Write Review:</label>
+              <textarea name="content" id="content-textarea"></textarea>
+              <label for="rating-select">Rating:</label>
+              <select name="rating" id="rating-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+              </select>
+              <button type="submit">Add Review</button>
+            </form>
+          </div>
+          <% } %>
 
-          <div class="card">
-            <h2>Reviews:</h2>
-            <% if (item.reviews.length) { %>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Date</th>
-                    <th>Reviewer</th>
-                    <th>Review</th>
-                    <th>Rating</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% item.reviews.forEach(function(review) { %>
+            <div class="card" id="reviews">
+              <h2>---- Reviews ----</h2>
+              <% if (item.reviews.length) { %>
+                <table>
+                  <thead>
                     <tr>
-                      <td>
-                        <%= review?.createdAt.toLocaleDateString() %>
-                      </td>
-                      <td>
-                        <%= review?.reviewer.name %>
-                      </td>
-                      <td>
-                        <%= review?.content %>
-                      </td>
-                      <td>
-                        <%= review?.rating %>
-                      </td>
+                      <th>Date</th>
+                      <th>Reviewer</th>
+                      <th>Review</th>
+                      <th>Rating</th>
                     </tr>
-                    <% }) %>
-                </tbody>
-              </table>
-              <% } else { %>
-                <h3>No Reviews Yet</h3>
-                <% } %>
-          </div>
+                  </thead>
+                  <tbody>
+                    <% item.reviews.forEach(function(review) { %>
+                      <tr>
+                        <td>
+                          <%= review?.createdAt.toLocaleDateString() %>
+                        </td>
+                        <td>
+                          <%= review?.reviewer.name %>
+                        </td>
+                        <td>
+                          <%= review?.content %>
+                        </td>
+                        <td>
+                          <%= review?.rating %>
+                        </td>
+                      </tr>
+                      <% }) %>
+                  </tbody>
+                </table>
+                <% } else { %>
+                  <h3>No Reviews Yet</h3>
+                  <% } %>
+            </div>
+      </div>
     </main>
 
     <%- include('../partials/footer') %>

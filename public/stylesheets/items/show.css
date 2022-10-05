@@ -46,7 +46,7 @@ main > div:first-child{
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  padding: 0;
+  padding: 5px;
 }
 
 .card > img {
@@ -81,6 +81,10 @@ main > div:first-child{
   justify-content: center;
 }
 
+#item-info{
+  animation: fadeInDown 2s;
+}
+
 #add-review-form{
   display: flex;
   align-items: center;
@@ -90,6 +94,12 @@ main > div:first-child{
 
 #add-review-form > * {
   margin: 2%;
+}
+
+#reviews{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 a{
@@ -105,14 +115,7 @@ div{
 button{
   margin: 5px;
   padding: 2px;
-}
-
-
-#title-edit{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  font-size: 15px;
 }
 
 table{
