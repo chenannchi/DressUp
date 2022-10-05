@@ -122,7 +122,7 @@ function update(req, res) {
     })
 }
 
-function addToCollection(req, res) {
+function addToCollections(req, res) {
   // console.log("My collections!!")
   Profile.findById(req.params.profileId)
     .then(profile => {
@@ -142,7 +142,31 @@ function addToCollection(req, res) {
     })
 }
 
-function indexCollection(req, res) {
+function deleteFromCollections(req, res) {
+  Profile.findById(req.params.profileId)
+  .populate("collections")
+    .then(profile => {
+      let index = -1
+      for (let i = 0; i < profile.collections.length; i++){
+        if(profile.collections[i]._id.valueOf() === req.params.itemId){
+          index = i
+          break
+        }
+      }
+      profile.collections.splice(index,1)
+      profile.save()
+        .then(() => {
+          // console.log(profile.collections)
+          res.redirect(`/items/mycollections`)
+        })
+        .catch(err => {
+          console.log(err)
+          res.redirect("/items")
+        })
+    })
+}
+
+function indexCollections(req, res) {
   Profile.findById(req.user.profile.id)
     .populate("collections")
     .then(profile => {
@@ -165,6 +189,7 @@ export {
   createReview,
   edit,
   update,
-  addToCollection,
-  indexCollection
+  addToCollections,
+  deleteFromCollections,
+  indexCollections
 }
