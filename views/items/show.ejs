@@ -37,10 +37,10 @@
       </div>
 
       <% if (user) { %>
-        <div class="card">
+        <div class="card" id="review-form">
           <h2>Write Reviews:</h2>
           <form id="add-review-form" action="/items/<%= item._id %>/reviews" method="POST">
-            <label for="content-textarea">Review:</label>
+            <label for="content-textarea"></label>
             <textarea name="content" id="content-textarea"></textarea>
             <label for="rating-select">Rating:</label>
             <select name="rating" id="rating-select">
@@ -71,16 +71,16 @@
                   <% item.reviews.forEach(function(review) { %>
                     <tr>
                       <td>
-                        <%= review.createdAt.toLocaleDateString() %>
+                        <%= review?.createdAt.toLocaleDateString() %>
                       </td>
                       <td>
-                        <%= review.reviewer %>
+                        <%= review?.reviewer.name %>
                       </td>
                       <td>
-                        <%= review.content %>
+                        <%= review?.content %>
                       </td>
                       <td>
-                        <%= review.rating %>
+                        <%= review?.rating %>
                       </td>
                     </tr>
                     <% }) %>

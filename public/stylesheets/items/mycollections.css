@@ -1,6 +1,5 @@
 main {
-  /* background-image: url("https://images.unsplash.com/photo-1633505899118-4ca6bd143043?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"); */
-  background-image: url("https://images.unsplash.com/photo-1524312966005-030e396636fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fGJlaWdlJTIwYmFja2dyb3VuZHxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60");
+  background-image: url("../../amber-palace.jpg");
   background-size:cover;
   background-attachment: fixed;
   min-height: 100vh;

@@ -6,41 +6,29 @@ function newItem(req, res) {
   res.render("items/new")
 }
 
-function create(req,res){
+function create(req, res) {
   req.body.owner = req.user.profile._id
   Item.create(req.body)
-  .then(item => {
-    res.redirect("/items")
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect("/items/new")
-  })
+    .then(item => {
+      Profile.findById(req.user.profile._id)
+      // .populate("collections")
+        .then(profile => {
+          profile.collections.push(item._id)
+          profile.save()
+          // console.log(profile)
+          // console.log(theUser.profile)
+          res.redirect("/items")
+        })
+        .catch(err => {
+          console.log(err)
+          res.redirect("/items/new")
+        })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect("/items/new")
+    })
 }
-
-// function create(req, res) {
-//   req.body.owner = req.user.profile._id
-//   Item.create(req.body)
-//     .then(item => {
-//       User.find({ profile: req.user.profile._id })
-//       .populate("collections")
-//         .then(theUser => {
-//           theUser.profile.collections.push(item._id)
-//           theUser.profile.save()
-//           console.log(theUser)
-//           console.log(theUser.profile)
-//           res.redirect("/items")
-//         })
-//         .catch(err => {
-//           console.log(err)
-//           res.redirect("/items/new")
-//         })
-//     })
-//     .catch(err => {
-//       console.log(err)
-//       res.redirect("/items/new")
-//     })
-// }
 
 function index(req, res) {
   Item.find({})
@@ -56,32 +44,22 @@ function index(req, res) {
     })
 }
 
-// function show(req, res) {
-//   Item.findById(req.params.id)
-//     .then(item => {
-//       console.log(item)
-//       res.render("items/show", {
-//         item,
-//       })
-//     })
-//     .catch(err => {
-//       console.log(err)
-//       res.redirect("/")
-//     })
-// }
-
 function show(req, res) {
   Item.findById(req.params.id)
-    .then(item => {
-      // console.log(item)
-      res.render("items/show", {
-        item,
-      })
+  .populate({
+    path:"reviews",
+    populate:{path:"reviewer"}
+  })
+  .then(item => {
+    // console.log(item.reviews)
+    res.render("items/show", {
+      item,
     })
-    .catch(err => {
-      console.log(err)
-      res.redirect("/")
-    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
 }
 
 function deleteItem(req, res) {
@@ -99,10 +77,11 @@ function createReview(req, res) {
   req.body.reviewer = req.user.profile._id
   Item.findById(req.params.id)
     .then(item => {
+      // console.log(item.reviews)
       item.reviews.push(req.body)
       item.save()
         .then(() => {
-          console.log(item)
+          // console.log(item)
           res.redirect(`/items/${item._id}`)
         })
         .catch(err => {

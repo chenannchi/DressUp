@@ -7,7 +7,7 @@ html {
 }
 
 main {
-  background-image: url("https://images.unsplash.com/photo-1531685250784-7569952593d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGxhaW4lMjB3YWxsfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+  background-image: url("../../white-wall.jpg");
   background-attachment: fixed;
   background-size: cover;
   min-height: 100vh;
@@ -73,6 +73,23 @@ main > div:first-child{
 #save-delete{
   display: flex;
   justify-content: center;
+}
+
+#review-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#add-review-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+}
+
+#add-review-form > * {
+  margin: 2%;
 }
 
 a{
