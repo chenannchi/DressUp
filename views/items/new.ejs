@@ -1,22 +1,22 @@
 <%- include('../partials/html-head') %>
-  <link rel="stylesheet" href="/stylesheets/items/new.css">
-  <%- include('../partials/nav') %>
-    <main>
-      <div class="card animate__animated animate__zoomIn">
-        <h1>Add a new fashion item:</h1>
-        <form action="/items" method="POST">
-          <label for="item-name">Name:</label>
-          <input type="text" name="name" id="item-name">
-          <label for="item-brand">Brand:</label>
-          <input type="text" name="brand" id="item-brand">
-          <label for="item-description">Description:</label>
-          <input type="text" name="description" id="item-description">
-          <label for="item-image">Image URL:</label>
-          <input type="url" name="image" id="item-image">
-          <label for="item-link">Item URL:</label>
-          <input type="url" name="link" id="item-link">
-          <button type="submit">Add Item</button>
-        </form>
-      </div>
-    </main>
-    <%- include('../partials/footer') %>
+<link rel="stylesheet" href="/stylesheets/items/new.css">
+<%- include('../partials/nav') %>
+  <main>
+    <div class="card animate__animated animate__zoomIn">
+      <div id="new-title">Add a new fashion item:</div>
+      <form action="/items" method="POST">
+        <label for="item-name">Name:</label>
+        <input type="text" name="name" id="item-name">
+        <label for="item-brand">Brand:</label>
+        <input type="text" name="brand" id="item-brand">
+        <label for="item-description">Description:</label>
+        <input type="text" name="description" id="item-description">
+        <label for="item-image">Image URL:</label>
+        <input type="url" name="image" id="item-image">
+        <label for="item-link">Item URL:</label>
+        <input type="url" name="link" id="item-link">
+        <button type="submit">Add Item</button>
+      </form>
+    </div>
+  </main>
+  <%- include('../partials/footer') %>
