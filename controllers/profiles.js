@@ -1,11 +1,10 @@
-import {Item} from "../models/item.js"
-import {Profile} from "../models/profile.js"
+import { Profile } from "../models/profile.js"
 import { User } from "../models/user.js"
 
-function index(req,res){
+function index(req, res) {
   Profile.find({})
-  .then(profiles=>{
-    res.render("profiles/index",{
+  .then(profiles => {
+    res.render("profiles/index", {
       profiles,
     })
   })
@@ -15,15 +14,15 @@ function index(req,res){
   })
 }
 
-function show(req,res){
-  User.find({profile:req.params.id})
+function show(req, res) {
+  User.find({ profile: req.params.id })
   .then(theUser => {
     // console.log(theUser)
     Profile.findById(req.params.id)
-    .then(profile=>{
+    .then(profile => {
       // console.log(profile)
       const isSelf = profile._id.equals(req.user.profile._id)
-      res.render("profiles/show",{
+      res.render("profiles/show", {
         theUser,
         profile,
         isSelf,
@@ -40,7 +39,7 @@ function show(req,res){
   })
 }
 
-export{
+export {
   index,
   show,
 }
