@@ -16,10 +16,11 @@ div {
   padding: 5px;
 }
 
-#action-buttons button {
+#action-buttons button,
+#review-button {
   margin: 2px;
   padding: 1px;
-  font-size: 10px;
+  font-size: 14px;
 }
 
 table {
@@ -63,8 +64,7 @@ main>div:first-child {
   flex-direction: column;
 }
 
-#action-buttons,
-#review-button {
+#action-buttons {
   display: flex;
   justify-content: center;
   flex-direction: row;
