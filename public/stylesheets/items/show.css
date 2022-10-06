@@ -29,6 +29,11 @@ table {
   table-layout: auto;
 }
 
+th{
+  font-size: 18px;
+  border-bottom: solid 2px black;
+}
+
 main>div:first-child {
   margin-top: 10px;
 }
@@ -112,8 +117,13 @@ main>div:first-child {
   #action-buttons button,
   #review-button {
     margin: 5px;
-    padding: 2px;
+    padding: 5px;
     font-size: 15px;
+  }
+
+  th{
+    font-size: 22px;
+    border-bottom: solid 2px black;
   }
 
   table{
