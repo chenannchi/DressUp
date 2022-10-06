@@ -26,28 +26,38 @@ The reason why I build this application is because it's getting colder recently.
 
   <br/>
 
-   - Home Page in Large Screen<br/>
-    - <img src="./assets/home_page_screenshot.png" alt="drawing" width="600"/>
+   - Add Fashion Item Page in Large Screen<br/>
+    - <img src="" alt="drawing" width="600"/>
 
   <br/>
 
-   - Home Page in Large Screen<br/>
-    - <img src="./assets/home_page_screenshot.png" alt="drawing" width="600"/>
+   - All Fashion Items Page in Large Screen<br/>
+    - <img src="" alt="drawing" width="600"/>
 
   <br/>
 
-   - Home Page in Large Screen<br/>
-    - <img src="./assets/home_page_screenshot.png" alt="drawing" width="600"/>
+  - Fashion Item Detail Page in Large Screen<br/>
+    - <img src="" alt="drawing" width="600"/>
 
   <br/>
 
-   - Home Page in Large Screen<br/>
-    - <img src="./assets/home_page_screenshot.png" alt="drawing" width="600"/>
+  - Fashion Item Edit Page in Large Screen<br/>
+    - <img src="" alt="drawing" width="600"/>
 
   <br/>
 
-   - Home Page in Large Screen<br/>
-    - <img src="./assets/home_page_screenshot.png" alt="drawing" width="600"/>
+   - My Collections Page in Large Screen<br/>
+    - <img src="" alt="drawing" width="600"/>
+
+  <br/>
+
+   - All Users Page in Large Screen<br/>
+    - <img src="" alt="drawing" width="600"/>
+
+  <br/>
+
+   - User's Profile Page in Large Screen<br/>
+    - <img src="" alt="drawing" width="600"/>
 
   <br/>
 

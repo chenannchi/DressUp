@@ -1,107 +1,107 @@
 <%- include('../partials/html-head') %>
-  <link rel="stylesheet" href="/stylesheets/items/show.css">
-  <%- include('../partials/nav') %>
-    <main>
-      <div id="item-info">
-        <div class="card">
-          <img src="<%= item.image %>" alt="<%= item.name %>'s image">
-          <div class="item-detail">
-            <h2>
-              <%= item.name %>
-            </h2>
-            <div>Brand:<%= item.brand %>
-            </div>
-            <div>
-              <% let total = 0 %> 
-              <% item.reviews.forEach(function(review) { %>
-                <% total +=review.rating %>
-              <% }) %>
-                <% if (total) { %>
-                  <%= (total / (item.reviews.length)).toFixed(1) %> ⭐ 
-                <% } %>
-            </div>
-            <div>
-              <%= item.description %>
-            </div>
-            <div><a href="<%= item.link %>" target="_blank">Learn more!</a></div>
-            <div id="save-delete">
-              <% if (user) { %>
-                <% if (!inCollections) { %>
-                  <form action="/items/<%= item._id %>/mycollections/<%= user.profile._id %>" method="POST">
-                    <button class="btn">Save to my collections</button>
-                  </form>
-                <% }else{ %>
-                  <form action="/items/<%= item._id %>/mycollections/<%= user.profile._id %>?_method=DELETE" method="POST">
-                    <button class="btn">Remove From My Collections</button>
-                  </form>
-                <% } %> 
-              <% } %>
-              <% if (user?.profile._id.equals(item.owner._id)) { %>
-                <form action="/items/<%= item._id %>?_method=DELETE" method="POST">
-                  <button type="submit">Delete Item</button>
+<link rel="stylesheet" href="/stylesheets/items/show.css">
+<%- include('../partials/nav') %>
+  <main>
+    <div id="item-info">
+      <div class="card" id="item-all-info">
+        <img src="<%= item.image %>" alt="<%= item.name %>'s image">
+        <div class="item-detail">
+          <h2>
+            <%= item.name %>
+          </h2>
+          <div>Brand:<%= item.brand %>
+          </div>
+          <div>
+            <% let total = 0 %> 
+            <% item.reviews.forEach(function(review) { %>
+              <% total +=review.rating %>
+            <% }) %>
+            <% if (total) { %>
+              <%= (total / (item.reviews.length)).toFixed(1) %> ⭐ 
+            <% } %>
+          </div>
+          <div>
+            <%= item.description %>
+          </div>
+          <div><a href="<%= item.link %>" target="_blank">Learn more!</a></div>
+          <div id="action-buttons">
+            <% if (user) { %>
+              <% if (!inCollections) { %>
+                <form action="/items/<%= item._id %>/mycollections/<%= user.profile._id %>" method="POST">
+                  <button class="btn">Save to my collections</button>
                 </form>
-                <a href="/items/<%= item._id %>/edit">
-                  <button>Edit Item</button>
-                </a>
-              <% } %>
-            </div>
+              <% }else{ %>
+                <form action="/items/<%= item._id %>/mycollections/<%= user.profile._id %>?_method=DELETE" method="POST">
+                  <button class="btn">Remove From My Collections</button>
+                </form>
+              <% } %> 
+            <% } %>
+            <% if (user?.profile._id.equals(item.owner._id)) { %>
+              <form action="/items/<%= item._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete Item</button>
+              </form>
+              <a href="/items/<%= item._id %>/edit">
+                <button>Edit Item</button>
+              </a>
+            <% } %>
           </div>
         </div>
-
-        <% if (user) { %>
-          <div class="card" id="review-form">
-            <form id="add-review-form" action="/items/<%= item._id %>/reviews" method="POST">
-              <label for="content-textarea">Write Review:</label>
-              <textarea name="content" id="content-textarea"></textarea>
-              <label for="rating-select">Rating:</label>
-              <select name="rating" id="rating-select">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5" selected>5</option>
-              </select>
-              <button type="submit">Add Review</button>
-            </form>
-          </div>
-          <% } %>
-
-            <div class="card" id="reviews">
-              <h2>---- Reviews ----</h2>
-              <% if (item.reviews.length) { %>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Date</th>
-                      <th>Reviewer</th>
-                      <th>Review</th>
-                      <th>Rating</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <% item.reviews.forEach(function(review) { %>
-                      <tr>
-                        <td>
-                          <%= review?.createdAt.toLocaleDateString() %>
-                        </td>
-                        <td>
-                          <%= review?.reviewer.name %>
-                        </td>
-                        <td>
-                          <%= review?.content %>
-                        </td>
-                        <td>
-                          <%= review?.rating %>
-                        </td>
-                      </tr>
-                      <% }) %>
-                  </tbody>
-                </table>
-                <% } else { %>
-                  <h3>No Reviews Yet</h3>
-                  <% } %>
-            </div>
       </div>
-    </main>
 
-    <%- include('../partials/footer') %>
+      <% if (user) { %>
+        <div class="card">
+          <form id="add-review-form" action="/items/<%= item._id %>/reviews" method="POST">
+            <label for="content-textarea">Write Review:</label>
+            <textarea name="content" id="content-textarea"></textarea>
+            <label for="rating-select">Rating:</label>
+            <select name="rating" id="rating-select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5" selected>5</option>
+            </select>
+            <button type="submit">Add Review</button>
+          </form>
+        </div>
+        <% } %>
+
+      <div class="card" id="reviews">
+        <h2>---- Reviews ----</h2>
+        <% if (item.reviews.length) { %>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Reviewer</th>
+                <th>Review</th>
+                <th>Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% item.reviews.forEach(function(review) { %>
+                <tr>
+                  <td>
+                    <%= review?.createdAt.toLocaleDateString() %>
+                  </td>
+                  <td>
+                    <%= review?.reviewer.name %>
+                  </td>
+                  <td>
+                    <%= review?.content %>
+                  </td>
+                  <td>
+                    <%= review?.rating %>
+                  </td>
+                </tr>
+                <% }) %>
+            </tbody>
+          </table>
+        <% } else { %>
+          <h3>No Reviews Yet</h3>
+        <% } %>
+      </div>
+    </div>
+  </main>
+
+<%- include('../partials/footer') %>
