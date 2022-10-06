@@ -3,8 +3,6 @@ html {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  /* height: 100%; */
-
 }
 
 /* The Universal Selector */
@@ -18,33 +16,14 @@ html {
 
 body {
   background-color:#EBCCAD;
-  color:white;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: 'EB Garamond', serif, system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
-    'Helvetica Neue', sans-serif;
+  'Helvetica Neue', sans-serif;
   margin: 0;
   width: 100%;
-}
-
-a{
-  color: #f6f6f6;
-}
-
-nav {
-  background-color: #F5E5D6;
-  color: #1a1a1a;
   display: flex;
-  align-items: center;
-  padding: 10px;
-  min-height: 60px;
-  font-size: 20px;
-  width: 100%;
-}
-
-nav a{
-  margin: 10px;
-  color: #1a1a1a;
-  /* color: #f6f6f6; */
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 main {
@@ -52,21 +31,44 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100%;
+  height: 90%;
 }
-body{
+
+nav {
+  background-color: #F5E5D6;
+  color: #1a1a1a;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+  height: 10%;
 }
+
+button{
+  font-family: 'EB Garamond', serif;
+  background-color: #EBCCAD;
+  border-color: #BC9F6A;
+  border-radius: 5%;
+  font-size: 70%;
+}
+
+button:hover{
+  background-color: #FFEECA;
+}
+
+nav a{
+  font-size: 13px;
+  margin: 2%;
+  color: #1a1a1a;
+}
+
 .right {
   margin-left: auto;
 }
 
 .card {
   display: flex;
-  width: 50vw;
+  width: 75vw;
   background-color: white;
   border: 2px solid black;
   border-radius: 10px;
@@ -75,14 +77,22 @@ body{
   text-align: center;
 }
 
-button{
-  font-family: 'EB Garamond', serif;
-  background-color: #EBCCAD;
-  border-color: #BC9F6A;
-  border-radius: 10px;
-  font-size: 20px;
-}
-
-button:hover{
-  background-color: #FFEECA;
+@media only screen and (min-width: 768px){
+  nav {
+    padding: 5px;
+  }
+  
+  button{
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  
+  nav a{
+    font-size: 20px;
+    margin: 1%;
+  }
+  
+  .card {
+    width: 50vw;
+  }
 }
