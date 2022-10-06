@@ -40,4 +40,8 @@ p{
   .welcome{
     font-size: 40px;
   }
+
+  .card{
+    max-width: 600px;
+  }
 }
