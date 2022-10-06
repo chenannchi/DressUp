@@ -58,9 +58,10 @@ The reason why I built this application is because it's been getting colder rece
 
 ## **Next Steps**
 -  Add a logo.
--  Add some music.
+-  Add a background music.
 -  Add category to the fashion item.
 -  Display the fashion items by categories.
+-  Add the number of reviews that a user has in profile show page.
 -  Add a functionality that the user can pair the fashion items together and save it. 
 - Turn the collections into an new model so that every user can have mutiple collections, for example, summer outfit collections, winter outfit collections, and outfit for work collections, etc.
 

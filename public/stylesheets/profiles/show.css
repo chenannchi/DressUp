@@ -5,7 +5,7 @@ main{
 }
 
 .card {
-  padding: 20px 0;
+  padding: 20px 10px;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -28,26 +28,42 @@ main{
   align-items: center;
 }
 
-h1{
-  margin: 20px 0 0 0;
+
+.status{
+  font-size: 20px;
+  margin: 3% 0;
+}
+
+.info-section{
+  margin: 10px;
+}
+
+#name{
+  font-size: 25px;
+  margin: 7% 2% 2% 2%;
 }
 
 @media only screen and (min-width: 768px){
   .card {
-    padding: 30px 0;
+    padding-top: 20px;
   }
   
   div{
     font-size: 20px;
     padding: 5px;
   }
+
+  .status{
+    font-size: 27px;
+    margin: 3% 0;
+  }
   
   .info-section{
-    margin: 10px;
+    margin: 5px;
   }
   
-  h3{
-    margin: 0;
+  #name{
+    font-size: 35px;
+    margin: 7% 1% 1% 1%;
   }
-
 }

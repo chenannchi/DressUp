@@ -9,9 +9,9 @@
           <h2>
             <%= item.name %>
           </h2>
-          <div>Brand:<%= item.brand %>
+          <div id="brand">Brand:<%= item.brand %>
           </div>
-          <div>
+          <div id="rating">
             <% let total = 0 %> 
             <% item.reviews.forEach(function(review) { %>
               <% total +=review.rating %>
@@ -20,10 +20,10 @@
               <%= (total / (item.reviews.length)).toFixed(1) %> ⭐ 
             <% } %>
           </div>
-          <div>
+          <div id="description">
             <%= item.description %>
           </div>
-          <div><a href="<%= item.link %>" target="_blank">Learn more!</a></div>
+          <div id="original-link"><a href="<%= item.link %>" target="_blank">Learn more!</a></div>
           <div id="action-buttons">
             <% if (user) { %>
               <% if (!inCollections) { %>
@@ -61,7 +61,7 @@
               <option value="4">4</option>
               <option value="5" selected>5</option>
             </select>
-            <button type="submit">Add Review</button>
+            <button type="submit" id="review-button">Add Review</button>
           </form>
         </div>
         <% } %>

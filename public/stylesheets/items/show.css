@@ -16,15 +16,16 @@ div {
   padding: 5px;
 }
 
-button {
-  margin: 5px;
-  padding: 2px;
-  font-size: 15px;
+#action-buttons button {
+  margin: 2px;
+  padding: 1px;
+  font-size: 10px;
 }
 
 table {
-  width: 90%;
+  width: 100%;
   text-align: center;
+  table-layout: auto;
 }
 
 main>div:first-child {
@@ -62,7 +63,8 @@ main>div:first-child {
   flex-direction: column;
 }
 
-#action-buttons {
+#action-buttons,
+#review-button {
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -74,6 +76,8 @@ main>div:first-child {
   justify-content: center;
   flex-direction: column;
   padding: 2%;
+  font-size: 20px;
+  width: 100%;
 }
 
 #item-info {
@@ -90,18 +94,35 @@ main>div:first-child {
   flex-direction: column;
 }
 
-#reviews-title{
+#reviews-title {
   font-size: 20px;
 }
 
+#brand,
+#rating,
+#original-link{
+  font-size: 20px;
+}
+
+#description {
+  font-size: 18px;
+}
+
 @media only screen and (min-width: 768px) {
-  #item-all-info {
-    flex-direction: row;
+  #action-buttons button,
+  #review-button {
+    margin: 5px;
+    padding: 2px;
+    font-size: 15px;
+  }
+
+  table{
+    font-size: 18px;
   }
 
   .card {
     margin-top: 5px;
-    width: 60vw;
+    width: 70vw;
     max-width: 800px;
     background-color: rgba(255, 255, 255, .9);
     flex-direction: row;
@@ -122,13 +143,19 @@ main>div:first-child {
 
   #add-review-form {
     flex-direction: row;
+    font-size: 20px;
   }
 
   #add-review-form>* {
     margin: 2%;
   }
 
-  #reviews-title{
+  #reviews-title {
     font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  #item-all-info {
+    flex-direction: row;
   }
 }
