@@ -5,32 +5,31 @@
 
     <body>
       <nav>
-        <a href="/" %>
+        <a href="/" class="nav" %>
           >
           Home
         </a>
         <% if (user) { %>
-          <a href="/items/new" %>
+          <a href="/items/new" class="nav" %>
             >
             Add Fashion Item
           </a>
           <% } %>
-            <a href="/items" %>
+            <a href="/items" class="nav" %>
               >
               All Fashion Items
             </a>
 
             <% if (user) { %>
-              <a href="/items/mycollections" %>
+              <a href="/items/mycollections" class="nav" %>
                 >
                 My Collections
               </a>
-              <a href="/profiles" %>
+              <a href="/profiles" class="nav" %>
                 >
                 All Users
               </a>
-              <a href="/profiles/<%= user.profile._id %>">
-                <!-- My Profile -->
+              <a href="/profiles/<%= user.profile._id %>" class="nav">
                 <%= user.profile.name %>
               </a>
               <a href="/auth/logout" class="right">
