@@ -15,8 +15,10 @@
               <% let total = 0 %> 
               <% item.reviews.forEach(function(review) { %>
                 <% total +=review.rating %>
-              <% }) %> 
-              <%= total / (item.reviews.length) %> ⭐ 
+              <% }) %>
+                <% if (total) { %>
+                  <%= (total / (item.reviews.length)).toFixed(1) %> ⭐ 
+                <% } %>
             </div>
             <div>
               <%= item.description %>
@@ -30,13 +32,13 @@
                   </form>
                 <% }else{ %>
                   <form action="/items/<%= item._id %>/mycollections/<%= user.profile._id %>?_method=DELETE" method="POST">
-                    <button class="btn">Remove from my collections</button>
+                    <button class="btn">Remove From My Collections</button>
                   </form>
                 <% } %> 
               <% } %>
               <% if (user?.profile._id.equals(item.owner._id)) { %>
                 <form action="/items/<%= item._id %>?_method=DELETE" method="POST">
-                  <button type="submit">Delete item</button>
+                  <button type="submit">Delete Item</button>
                 </form>
                 <a href="/items/<%= item._id %>/edit">
                   <button>Edit Item</button>

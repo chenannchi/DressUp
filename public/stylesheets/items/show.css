@@ -51,12 +51,16 @@ main > div:first-child{
 
 .card > img {
   border-radius: 10px;
-  width: 35%;
+  width: 40%;
   margin: 5px 0;
 }
 
 .item-detail{
   width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .card-body {
