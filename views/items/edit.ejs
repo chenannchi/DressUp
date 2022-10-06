@@ -1,30 +1,21 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/items/edit.css">
 <%- include('../partials/nav') %>
-
 <main>
   <div class="card">
-
     <form action="/items/<%= item._id %>?_method=PUT" method="POST">
       <label for="item-name">Name:</label>
       <input type="text" name="name" id="item-name" value="<%= item.name %>">
-      
       <label for="item-brand">Brand:</label>
       <input type="text" name="brand" id="item-brand" value="<%= item.brand %>">
-      
       <label for="item-description">Description:</label>
       <input type="text" name="description" id="item-description" value="<%= item.description %>">
-      
       <label for="item-image">Link of the Image:</label>
       <input type="url" name="image" id="item-image" value="<%= item.image %>">
-      
       <label for="item-link">Link of the fashion item:</label>
       <input type="url" name="link" id="item-link" value="<%= item.link %>">
-      
       <button type="submit">Save Item</button>
     </form>
   </div>
-
 </main>
-
 <%- include('../partials/footer') %>

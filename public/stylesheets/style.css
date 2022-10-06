@@ -33,6 +33,14 @@ main {
   flex-direction: column;
 }
 
+input[type="text"],
+input[type="url"],
+textarea{
+  font-family: 'EB Garamond', serif, system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
+  'Helvetica Neue', sans-serif;
+  font-size: large;
+}
+
 nav {
   background-color: #F5E5D6;
   color: #1a1a1a;
