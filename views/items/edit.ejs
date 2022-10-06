@@ -3,6 +3,7 @@
 <%- include('../partials/nav') %>
 <main>
   <div class="card">
+    <div id="edit-title">Edit fashion item:</div>
     <form action="/items/<%= item._id %>?_method=PUT" method="POST">
       <label for="item-name">Name:</label>
       <input type="text" name="name" id="item-name" value="<%= item.name %>">

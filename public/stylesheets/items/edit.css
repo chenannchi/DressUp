@@ -43,7 +43,7 @@ form > button {
   
 }
 
-#new-title{
+#edit-title{
   font-size: 25px;
   text-align: center;
   padding: 10px;
@@ -66,10 +66,9 @@ form > button {
   .card {
     width: 60vw;
     max-width: 600px;
-    max-height: 400px;
   }
   
-  #new-title{
+  #edit-title{
     font-size: 32px;
   }
   

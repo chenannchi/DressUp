@@ -66,11 +66,9 @@ form > button {
   .card {
     width: 60vw;
     max-width: 600px;
-    max-height: 400px;
   }
   
   #new-title{
     font-size: 32px;
   }
-  
 }
