@@ -3,6 +3,7 @@ main {
   background-attachment: fixed;
   background-size: cover;
   justify-content: flex-start;
+  min-height: 90vh;
 }
 
 a {
@@ -40,7 +41,8 @@ main>div:first-child {
   background-color: rgba(255, 255, 255, .9);
   align-items: center;
   justify-content: space-evenly;
-  padding: 5px;
+  /* padding: 5px; */
+  padding: 2% 2% 5% 2%;
 }
 
 .item-detail {
@@ -53,6 +55,7 @@ main>div:first-child {
 .card>img {
   border-radius: 10px;
   width: 90%;
+  margin-top: 5%;
 }
 
 #item-all-info {
@@ -87,6 +90,10 @@ main>div:first-child {
   flex-direction: column;
 }
 
+#reviews-title{
+  font-size: 20px;
+}
+
 @media only screen and (min-width: 768px) {
   #item-all-info {
     flex-direction: row;
@@ -95,6 +102,7 @@ main>div:first-child {
   .card {
     margin-top: 5px;
     width: 60vw;
+    max-width: 800px;
     background-color: rgba(255, 255, 255, .9);
     flex-direction: row;
   }
@@ -118,5 +126,9 @@ main>div:first-child {
 
   #add-review-form>* {
     margin: 2%;
+  }
+
+  #reviews-title{
+    font-size: 25px;
   }
 }
