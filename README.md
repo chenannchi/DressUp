@@ -22,44 +22,28 @@ The reason why I built this application is because it's been getting colder rece
 ## **Screenshots**
 
  - Home Page in Large Screen<br/>
-    - <img src="./public/homepage-in-larger-screen.png" alt="drawing" width="600"/>
+    <img src="./public/homepage-in-larger-screen.png" alt="drawing" width="600"/>
 
   <br/>
 
-   <!-- - Add Fashion Item Page in Large Screen<br/>
-    - <img src="" alt="drawing" width="600"/>
+  - Add Fashion Item Page in Large Screen<br/>
+    <img src="./public/new-page-in-larger-screen.png" alt="drawing" width="600"/>
 
   <br/>
 
-   - All Fashion Items Page in Large Screen<br/>
-    - <img src="" alt="drawing" width="600"/>
+  - All Fashion Items Page in Large Screen<br/>
+    <img src="./public/all-items-page.png" alt="drawing" width="600"/>
 
   <br/>
 
-  - Fashion Item Detail Page in Large Screen<br/>
-    - <img src="" alt="drawing" width="600"/>
+  - Home Page / Add Fashion Item Page / All Fashion Items Page in Small Screen<br/>
+      <img src="./public/homepage-small.png" alt="drawing" width="200" height="360"/>
+      <img src="./public/new-page-small.png" alt="drawing" width="200" height="360"/>
+      <img src="./public/all-items-small.png" alt="drawing" width="200" height="360"/>
 
   <br/>
 
-  - Fashion Item Edit Page in Large Screen<br/>
-    - <img src="" alt="drawing" width="600"/>
 
-  <br/>
-
-   - My Collections Page in Large Screen<br/>
-    - <img src="" alt="drawing" width="600"/>
-
-  <br/>
-
-   - All Users Page in Large Screen<br/>
-    - <img src="" alt="drawing" width="600"/>
-
-  <br/>
-
-   - User's Profile Page in Large Screen<br/>
-    - <img src="" alt="drawing" width="600"/>
-
-  <br/> -->
 
 ## **Technologies Used**: List of technologies used.
 - HTML
