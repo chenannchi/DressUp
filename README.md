@@ -1,9 +1,9 @@
 # DressUp
 ## **About** 
 
-DressUp is a application that can help users to collect the information about the fashion items, and save them into their collections. They can even save the fashion items that other people added in this application. 
+DressUp is an application that can help users to collect the information about fashion items and save them into their collections. They can even save these items that other people added in this application. 
 
-The reason why I built this application is because it's been getting colder recently. It means it's time to buy some new clothes! Come use this app to help you save the information about the items that you are interested in. 
+The reason why I built this application is because it's been getting colder recently. It means it's time to buy some new clothes! Come use this app to help you save the information about items that you are interested! 
 
 ## **Getting Started** 
 - Planning materials:
