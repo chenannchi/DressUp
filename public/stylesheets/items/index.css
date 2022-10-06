@@ -3,6 +3,7 @@ main {
   background-size:cover;
   background-attachment: fixed;
   justify-content: flex-start;
+  min-height: 100vh;
 }
 
 .card-container {

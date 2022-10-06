@@ -3,10 +3,8 @@ main {
   background-size:cover;
   background-attachment: fixed;
   min-height: 100vh;
-  display: flex;
   justify-content: flex-start;
 }
-
 
 .card-container {
   display: flex;
@@ -21,11 +19,9 @@ main {
 }
 
 .card {
-  display: flex;
-  width: 200px;
-  height: 400px;
+  width: 100px;
+  height: 200px;
   background-color: rgba(238, 227, 203,.7);
-  border-radius: 10px;
   padding: 10px;
   flex-direction: column;
   align-items: center;
@@ -35,36 +31,57 @@ main {
   border: none;
 }
 
-.card > img {
-  border-radius: 10px;
-  width: 95%;
-  /* height: 40%; */
-  margin: 5px;
-  /* border:2px grey solid; */
-}
-
 .card-body {
   width: 95%;
-  height:30%;
+  height:20%;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #5e463e;
-  
 }
 
 .card-title {
-  font-size: 20px;
+  font-size: 65%;
+}
+
+.card > img {
+  border-radius: 5%;
+  width: 95%;
+  margin: 5px;
 }
 
 #collections-index-title{
   background-color: rgb(238, 227, 203,.7);
   border-radius: 50%;
-  padding: 0 40px;
-  margin: 20px;
-  border-style: dotted;
+  padding: 10px 40px;
+  margin-top: 10px;
   color: #5e463e;
-  border:none;
   animation: fadeIn 3s;
-  animation-delay: 150ms;
+  animation-delay: 20ms;
+  font-size: 20px;
+}
+
+@media only screen and (min-width: 768px){ 
+  .card {
+    width: 200px;
+    height: 400px;
+  }
+  
+  .card-body {
+    height:30%;
+  }
+  
+  .card-title {
+    font-size: 20px;
+  }
+
+  .card > img {
+    border-radius: 10px;
+  }
+  
+  #collections-index-title{
+    padding: 20px 40px;
+    margin: 20px;
+    font-size: 32px;
+  }
 }
