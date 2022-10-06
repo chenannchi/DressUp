@@ -1,12 +1,10 @@
 <%- include('../partials/html-head') %>
-  <link rel="stylesheet" href="/stylesheets/items/index.css">
-  <%- include('../partials/nav') %>
+<link rel="stylesheet" href="/stylesheets/items/index.css">
+<%- include('../partials/nav') %>
 <main>
-
-  <div id="collections-index-title">
-    <h1>The Fashion Collections:</h1>
+  <div>
+    <div id="collections-index-title">The Fashion Collections:</div>
   </div>
-
   <div class="card-container">
     <% items.forEach(item=> { %>
       <a class="text-decoration-none" href="/items/<%= item._id %>">
@@ -19,8 +17,7 @@
           </div>
         </div>
       </a>
-      <% }) %>
+    <% }) %>
   </div>
 </main>
-
-    <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>

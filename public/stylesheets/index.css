@@ -5,12 +5,12 @@ html{
 
 body{
   justify-content: flex-start;
-  height: 100%;
 }
 
 main {
   background-image: url("../home-clothes.jpg");
   background-size:cover;
+  height: 90vh;
 }
 
 p{
@@ -28,6 +28,7 @@ p{
 .card{
   opacity: .9;
   animation: fadeIn 1s;
+  padding: 20px;
 }
 
 
