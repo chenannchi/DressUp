@@ -1,11 +1,8 @@
 main {
-  display: flex;
-  justify-content: center;
   background-image: url("../../white-wall-2.jpg");
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
-  display: flex;
   justify-content: flex-start;
 }
 
@@ -13,8 +10,9 @@ main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
-  margin: 20px;
+  margin: 10px;
   max-width: 1600px;
 }
 
@@ -23,30 +21,45 @@ main {
 }
 
 .card {
-  display: flex;
-  width: 300px;
-  background-color: rgba(208, 184, 168,.9);
-  border: 2px solid black;
-  border-radius: 10px;
-  color: black;
+  width: 150px;
+  height: 200px;
+  background-color: rgba(208, 184, 168,.7);
   padding: 10px;
   animation: fadeInUp 2s;
-  border: none;
   justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card > img {
   border-radius: 10px;
-  height: 96px;
+  height: 45%;
 }
 
-.card-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#user-name{
+  font-size: 25px;
+  margin: 10px;
 }
 
-.card-title {
-  font-size: 24px;
-  margin: 0 10px;
+@media only screen and (min-width: 768px){
+    .card {
+      width: 250px;
+      height: 125px;
+      flex-direction: row;
+    }
+
+    .card > img {
+      height: 96px;
+    }
+    
+    .card-body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .card-title {
+      font-size: 24px;
+      margin: 0 10px;
+    }
 }
