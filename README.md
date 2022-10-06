@@ -26,7 +26,7 @@ The reason why I build this application is because it's getting colder recently.
 
   <br/>
 
-   - Add Fashion Item Page in Large Screen<br/>
+   <!-- - Add Fashion Item Page in Large Screen<br/>
     - <img src="" alt="drawing" width="600"/>
 
   <br/>
@@ -59,7 +59,7 @@ The reason why I build this application is because it's getting colder recently.
    - User's Profile Page in Large Screen<br/>
     - <img src="" alt="drawing" width="600"/>
 
-  <br/>
+  <br/> -->
 
 ## **Technologies Used**: List of technologies used.
 - HTML
