@@ -1,20 +1,20 @@
 <%- include('./partials/html-head') %>
-  <link rel="stylesheet" href="/stylesheets/index.css">
-  <%- include('./partials/nav') %>
-    <main>
-      <div class="card">
-        <section>
-          <% if (user) { %>
-            <div class="welcome">
-              <%= user.profile.name %>,<br>welcome to <b>DressUp</b>!
-            </div>
-            <% }else{ %>
-              <div class="welcome">Welcome to <b>DressUp</b>!</div>
-              <% } %>
-                <p>You can add fashion items by simply entering some info about your fashion item, collect every fashion
-                  item you are interested in, and finally collect fashion items that are listed.</p>
-        </section>
-      </div>
-    </main>
+<link rel="stylesheet" href="/stylesheets/index.css">
+<%- include('./partials/nav') %>
+  <main>
+    <div class="card">
+      <section>
+        <% if (user) { %>
+          <div class="welcome">
+            <%= user.profile.name %>,<br>welcome to <b>DressUp</b>!
+          </div>
+        <% }else{ %>
+          <div class="welcome">Welcome to <b>DressUp</b>!</div>
+        <% } %>
+          <p>You can add fashion items by simply entering some info about your fashion item, collect every fashion 
+            item you are interested in, and finally collect fashion items that are listed.</p>
+      </section>
+    </div>
+  </main>
 
-    <%- include('./partials/footer') %>
+<%- include('./partials/footer') %>
