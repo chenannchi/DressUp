@@ -45,7 +45,7 @@ The reason why I built this application is because it's been getting colder rece
 
 
 
-## **Technologies Used**: 
+## **Technologies Used**
 - HTML
 - CSS
 - JS
