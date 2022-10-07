@@ -83,7 +83,9 @@
             <thead>
               <tr>
                 <th>Date</th>
-                <th>Reviewer</th>
+                <% if (user) { %>
+                  <th>Reviewer</th>
+                <% } %>
                 <th>Review</th>
                 <th>Rating</th>
               </tr>
@@ -94,9 +96,11 @@
                   <td>
                     <%= review?.createdAt.toLocaleDateString() %>
                   </td>
-                  <td>
-                    <%= review?.reviewer.name %>
-                  </td>
+                  <% if (user) { %>
+                    <td>
+                      <%= review?.reviewer.name %>
+                    </td>
+                  <% } %>
                   <td>
                     <%= review?.content %>
                   </td>
