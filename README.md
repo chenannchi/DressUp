@@ -63,7 +63,8 @@ The reason why I built this application is because it's been getting colder rece
 -  Display the fashion items by categories.
 -  Add the number of reviews that a user has in profile show page.
 -  Add a functionality that the user can pair the fashion items together and save it. 
-- Turn the collections into an new model so that every user can have mutiple collections, for example, summer outfit collections, winter outfit collections, and outfit for work collections, etc.
+-  Add a functionality that the deleted item will automatically removed from other users' collections as soon as the item is deleted by the owner.
+-  Turn the collections into an new model so that every user can have mutiple collections, for example, summer outfit collections, winter outfit collections, and outfit for work collections, etc.
 
 ## **Credits**
 - Background images from [Unsplash](https://unsplash.com/)
