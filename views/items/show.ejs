@@ -38,7 +38,7 @@
             <% if (user) { %>
               <% if (!inCollections) { %>
                 <form action="/items/<%= item._id %>/mycollections/<%= user.profile._id %>" method="POST">
-                  <button class="btn">Save to my collections</button>
+                  <button class="btn">Save To My Collections</button>
                 </form>
               <% }else{ %>
                 <form action="/items/<%= item._id %>/mycollections/<%= user.profile._id %>?_method=DELETE" method="POST">
