@@ -9,7 +9,7 @@
           <h2>
             <%= item.name %>
           </h2>
-          <div id="brand">Brand:<%= item.brand %>
+          <div id="brand">Brand:&nbsp&nbsp&nbsp<%= item.brand %>
           </div>
           <div id="rating">
             <% let total = 0 %> 
@@ -24,6 +24,9 @@
             <%= item.description %>
           </div>
           <div id="original-link"><a href="<%= item.link %>" target="_blank">Learn more!</a></div>
+          <% if (user) { %>
+            <div>Added by:&nbsp&nbsp&nbsp<%= item.owner.name %></div>
+          <% } %>
           <div id="action-buttons">
             <% if (user) { %>
               <% if (!inCollections) { %>

@@ -47,6 +47,7 @@ function show(req, res) {
     .populate("collections")
     .then(profile => {
       Item.findById(req.params.id)
+      .populate("owner")
       .populate({
         path:"reviews",
         populate:{path:"reviewer"}
