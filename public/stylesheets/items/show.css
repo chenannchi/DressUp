@@ -111,6 +111,7 @@ main>div:first-child {
 
 #description {
   font-size: 18px;
+  text-align: left;
 }
 
 @media only screen and (min-width: 768px) {
