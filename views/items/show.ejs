@@ -24,9 +24,16 @@
             <%= item.description %>
           </div>
           <div id="original-link"><a href="<%= item.link %>" target="_blank">Learn more!</a></div>
-          <% if (user) { %>
-            <div>Added by:&nbsp&nbsp&nbsp<%= item.owner.name %></div>
-          <% } %>
+          <div>
+            <% if (user) { %>
+              Added by
+              <% if (item.owner.name === user.profile.name) { %>
+                you
+              <% }else{ %>
+                <%= item.owner.name %>
+              <% } %> 
+            <% } %>
+          </div>
           <div id="action-buttons">
             <% if (user) { %>
               <% if (!inCollections) { %>
