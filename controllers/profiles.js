@@ -17,10 +17,8 @@ function index(req, res) {
 function show(req, res) {
   User.find({ profile: req.params.id })
   .then(theUser => {
-    // console.log(theUser)
     Profile.findById(req.params.id)
     .then(profile => {
-      // console.log(profile)
       const isSelf = profile._id.equals(req.user.profile._id)
       res.render("profiles/show", {
         theUser,

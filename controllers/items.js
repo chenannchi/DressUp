@@ -1,6 +1,5 @@
 import { Item } from "../models/item.js"
 import { Profile } from "../models/profile.js"
-import { User } from "../models/user.js"
 
 function newItem(req, res) {
   res.render("items/new")
@@ -106,11 +105,9 @@ function createReview(req, res) {
   req.body.reviewer = req.user.profile._id
   Item.findById(req.params.id)
   .then(item => {
-    // console.log(item.reviews)
     item.reviews.push(req.body)
     item.save()
     .then(() => {
-      // console.log(item)
       res.redirect(`/items/${item._id}`)
     })
     .catch(err => {
@@ -152,17 +149,13 @@ function update(req, res) {
 }
 
 function addToCollections(req, res) {
-  // console.log("My collections!!")
   Profile.findById(req.params.profileId)
   .then(profile => {
-    // console.log(req.body)
     if (!profile.collections.includes(req.params.itemId)) {
       profile.collections.push(req.params.itemId)
     }
     profile.save()
     .then(() => {
-      // console.log(profile.collections)
-      // res.redirect(`/items/mycollections`)
       res.redirect(`/items/${req.params.itemId}`)
     })
     .catch(err => {
@@ -190,7 +183,6 @@ function deleteFromCollections(req, res) {
     profile.collections.splice(index,1)
     profile.save()
     .then(() => {
-      // console.log(profile.collections)
       res.redirect(`/items/${req.params.itemId}`)
     })
     .catch(err => {
